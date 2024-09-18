@@ -57,6 +57,9 @@ python3 ALIGN.py
 
 ### 3-1. Various pretrained CLIP models
 According to OpenClip library, there are over 100 pretrained CLIP models 
+```
+python3 all_models.py
+```
 
 ### 3-2. Manual prompt tuning
 ```
