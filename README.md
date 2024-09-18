@@ -1,6 +1,6 @@
 # Zero-shot Classification Challenge
 
-#### 🎉🎉 Achieved 5th place in the challenge 🎉🎉 
+#### 🎉🎉 Achieved 5th place with a private score of 90.617 and a public score of 90.760 🎉🎉
 </br>
 
 <img width="1046" alt="Screenshot 2024-09-18 at 8 39 24 PM" src="https://github.com/user-attachments/assets/4a62068b-73af-4a7f-8c02-73d422da3041">
@@ -12,6 +12,7 @@
 The purpose of this challenge is to predict the labels of a given test image dataset using a Vision Language Model (VLM). **In this case, the VLM model must not be trained on the provided test data.** The goal of this challenge is to enhance the performance of the model in recognizing image datasets it has never seen before (zero-shot classification) using the VLM model.
 
 - Data Composition: The challenge dataset is for zero-shot classification and consists of 8,100 images and 6 classes.
+<div align="center">
 
 |Category|Statistics|
 |------|---|
@@ -19,9 +20,11 @@ The purpose of this challenge is to predict the labels of a given test image dat
 |number of samples|8100|
 |image size|(224, 224, 3)|
 
+</div>
+
 - Zero-shot Classification: Zero-shot classification is a task where the model predicts classes it has not seen during training. A typical example is CLIP, a huge pre-trained model. Therefore, using the challenge-provided data or the original data for model training (including supervised, unsupervised, and self-supervised) is prohibited.
 
-- Predicting Test Data: The labels of the test data should be predicted using the trained model. One label should be predicted for each test image. The predicted test labels should be submitted to Kaggle in CSV format, where they will be automatically scored. The test labels must be predicted by the trained model, and manual labeling by a human is not allowed.
+- Predicting Test Data: The labels of the test data should be predicted using the trained model. One label should be predicted for each test image. The predicted test labels should be submitted to Kaggle in CSV format, where they will be automatically scored. The test labels must be predicted by the trained model and manual labeling by a human is not allowed.
 
 </br>
 
@@ -48,7 +51,7 @@ But the challenge does not allow for the use of few-shot methods to improve the 
 
 ## 3. Experiments
 
-### 3-0. ALIGN model by Kakao brain
+### 3-0. ALIGN model
 [ALIGN](https://arxiv.org/pdf/2102.05918) is another model for zero-shot classification proposed by Google. While the original ALIGN model is not publicly available, Kakao Brain has provided an open-sourced pre-trained ALIGN model that offers performance similar to Google's ALIGN model. By using pre-trained ALIGN model 
 
 ```
