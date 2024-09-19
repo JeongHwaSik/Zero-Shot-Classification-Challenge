@@ -114,11 +114,57 @@ python3 all_models.py
 ```
 
 ### 3-2. Manual prompt tuning
+
+From section 3-1, I learned that ensembling some useful prompts can enhance the performance of the CLIP model. Therefore, I selected the "ViT-bigG-14-CLIPA" model, pre-trained with the "Datacomp1b" dataset, and manually experimented with various prompts. Through trial and error, I found that while ensembling prompts does improve performance, the effectiveness is really slight.
+
+|Top-1 Acc.|Models|Pretrained|prompt|
+|---|---|---|---|
+|0.88617|ViT-bigG-14-CLIPA|Datacomp1b|[{}]|
+|0.89086|ViT-bigG-14-CLIPA|Datacomp1b|['itap of a {}.', 'a bad photo of the {}.', 'a origami {}.', 'a photo of the large {}.', 'a {} in a video game.', 'art of the {}.', 'a photo of the small {}.']|
+|0.89037|ViT-bigG-14-CLIPA|Datacomp1b|['itap of a {}.', 'a bad photo of the {}.', 'a origami {}.', 'a photo of the large {}.', 'a {} in a video game.', 'art of the {}.', 'a photo of the small {}.']|
+|0.89135|ViT-bigG-14-CLIPA|Datacomp1b|['itap of a {}.', 'a bad photo of the {}.', 'a origami {}.', 'a photo of the large {}.', 'a {} in a video game.', 'art of the {}.', 'a photo of the small {}.']|
+|0.88913|ViT-bigG-14-CLIPA|Datacomp1b|['itap of a {}.', 'a bad photo of the {}.', 'a origami {}.', 'a photo of the large {}.', 'a {} in a video game.', 'art of the {}.', 'a photo of the small {}.']|
+|0.88913|ViT-bigG-14-CLIPA|Datacomp1b|['itap of a {}.', 'a bad photo of the {}.', 'a origami {}.', 'a photo of the large {}.', 'a {} in a video game.', 'art of the {}.', 'a photo of the small {}.']|
+|0.88938|ViT-bigG-14-CLIPA|Datacomp1b|['itap of a {}.', 'a bad photo of the {}.', 'a origami {}.', 'a photo of the large {}.', 'a {} in a video game.', 'art of the {}.', 'a photo of the small {}.']|
+|0.89061|ViT-bigG-14-CLIPA|Datacomp1b|['itap of a {}.', 'a bad photo of the {}.', 'a origami {}.', 'a photo of the large {}.', 'a {} in a video game.', 'art of the {}.', 'a photo of the small {}.']|
+|0.89358|ViT-bigG-14-CLIPA|Datacomp1b|['itap of a {}.', 'a bad photo of the {}.', 'a origami {}.', 'a photo of the large {}.', 'a {} in a video game.', 'art of the {}.', 'a photo of the small {}.']|
+|0.89160|ViT-bigG-14-CLIPA|Datacomp1b|['a bad photo of the {}.', 'a origami {}.', 'a photo of the large {}.', 'a {} in a video game.', 'art of the {}.', 'a blurry photo of the {}.']|
+|0.89432|ViT-bigG-14-CLIPA|Datacomp1b|['a bad photo of the {}.', 'a origami {}.', 'a photo of the large {}.', 'a {} in a video game.', 'art of the {}.', 'a view of the {}.']|
+|0.89111|ViT-bigG-14-CLIPA|Datacomp1b|['a bad photo of the {}.', 'a origami {}.', 'a photo of the large {}.', 'a {} in a video game.', 'art of the {}.', 'a view of the {}.', 'a cropped photo of the {}.']|
+|0.89506|ViT-bigG-14-CLIPA|Datacomp1b|['{}', 'a bad photo of the {}.', 'a origami {}.', 'a photo of the large {}.', 'a {} in a video game.', 'art of the {}.', 'a view of the {}.']|
+|0.89382|ViT-bigG-14-CLIPA|Datacomp1b|['{}', 'a bad photo of the {}.', 'a origami {}.', 'a photo of the large {}.', 'a {} in a video game.', 'art of the {}.', 'a view of the {}.', 'the embroidered {}.']|
+|0.89432|ViT-bigG-14-CLIPA|Datacomp1b|['{}', 'a bad photo of the {}.', 'a origami {}.', 'a photo of the large {}.', 'a {} in a video game.', 'art of the {}.', 'a view of the {}.', 'a dark photo of the {}.']|
+|0.89234|ViT-bigG-14-CLIPA|Datacomp1b|['{}', 'a bad photo of the {}.', 'a origami {}.', 'a photo of the large {}.', 'a {} in a video game.', 'art of the {}.', 'a view of the {}.', 'a low resolution photo of the {}.']|
+|**0.89506**|**ViT-bigG-14-CLIPA**|**Datacomp1b**|**['{}', 'a bad photo of the {}.', 'a origami {}.', 'a photo of the large {}.', 'a {} in a video game.', 'art of the {}.', 'a view of the {}.', 'a photo of many {}.']**|
+|0.89209|ViT-bigG-14-CLIPA|Datacomp1b|['{}', 'a bad photo of the {}.', 'a origami {}.', 'a photo of the large {}.', 'a {} in a video game.', 'art of the {}.', 'a view of the {}.', 'a photo of many {}.', 'a photo of the hard to see {}.']|
+|0.89456|ViT-bigG-14-CLIPA|Datacomp1b|['{}', 'a bad photo of the {}.', 'a origami {}.', 'a photo of the large {}.', 'a {} in a video game.', 'art of the {}.', 'a view of the {}.', 'a photo of many {}.', 'graffiti of a {}.']|
+|0.89234|ViT-bigG-14-CLIPA|Datacomp1b|['{}', 'a bad photo of the {}.', 'a origami {}.', 'a photo of the large {}.', 'a {} in a video game.', 'art of the {}.', 'a view of the {}.', 'a photo of many {}.', 'the embroidered {}.']|
+|0.89308|ViT-bigG-14-CLIPA|Datacomp1b|['{}', 'a bad photo of the {}.', 'a origami {}.', 'a photo of the large {}.', 'a {} in a video game.', 'art of the {}.', 'a view of the {}.', 'a photo of many {}.', 'a rendering of a {}.']|
+|0.89382|ViT-bigG-14-CLIPA|Datacomp1b|['{}', 'a bad photo of the {}.', 'a origami {}.', 'a photo of the large {}.', 'a {} in a video game.', 'art of the {}.', 'a view of the {}.', 'a photo of many {}.', 'a tattoo of a {}.']|
+|0.89333|ViT-bigG-14-CLIPA|Datacomp1b|['{}', 'a bad photo of the {}.', 'a origami {}.', 'a photo of the large {}.', 'a {} in a video game.', 'art of the {}.', 'a view of the {}.', 'a photo of many {}.', 'a scene of the {}.']|
+|0.89259|ViT-bigG-14-CLIPA|Datacomp1b|['{}', 'a bad photo of the {}.', 'a origami {}.', 'a photo of the large {}.', 'a {} in a video game.', 'art of the {}.', 'a view of the {}.', 'a photo of many {}.', 'a photo of a {}, a type of scene.']|
+
+
+Here's the script for manually tuning prompts.
 ```
 python3 manual_prompt_tuning.py
 ```
 
 ### 3-3. Linear probing with ImageNet and SUN397
+The CLIP model is pre-trained on a vast dataset from the Internet, which helps enhance its generalizability. However, this large-scale training data can also introduce some noise into the model. To address this issue, I attempted to train additional adapters using the ImageNet and SUN397 datasets to help mitigate the noise.
+
+|Top-1 Acc.|Models|Dataset|k-shot|Epochs|prompt|
+|---|---|---|---|---|---|
+|0.88049|ViT-bigG-14-CLIPA|ImageNet|Full|16|"a photo of a {class}."|
+|0.88421|ViT-bigG-14-CLIPA|ImageNet|Full|32|"a photo of a {class}."|
+|0.84197|ViT-bigG-14-CLIPA|ImageNet|16-shot|200|"a photo of a {class}."|
+|0.84197|ViT-bigG-14-CLIPA|ImageNet|32-shot|200|"a photo of a {class}."|
+|0.83555|ViT-bigG-14-CLIPA|SUN397|Full|16|"a photo of a {class}."|
+|0.82666|ViT-bigG-14-CLIPA|SUN397|Full|32|"a photo of a {class}."|
+|0.84987|ViT-bigG-14-CLIPA|SUN397|16-shot|200|"a photo of a {class}."|
+|0.84197|ViT-bigG-14-CLIPA|SUN397|32-shot|200|"a photo of a {class}."|
+
+
 
 ### 3-4. Linear probing with "blurred" ImageNet and "blurred" SUN397
 
