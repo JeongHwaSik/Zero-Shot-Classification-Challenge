@@ -11,7 +11,7 @@
 ## 1. Challenge Overview
 The purpose of this challenge is to predict the labels of a given test image dataset using a Vision Language Model (VLM). **In this case, the VLM model must not be trained on the provided test data.** The goal of this challenge is to enhance the performance of the model in recognizing image datasets it has never seen before (zero-shot classification) using the VLM model.
 
-- Data Composition: The challenge dataset is for zero-shot classification and consists of 8,100 images and 6 classes.
+- Data Composition: The challenge dataset is for zero-shot classification and consists of 8,100 images and 6 classes. I uploaded some images in the Scene folder.
 <div align="center">
 
 |Category|Statistics|
@@ -52,14 +52,63 @@ But the challenge does not allow for the use of few-shot methods to improve the 
 ## 3. Experiments
 
 ### 3-0. ALIGN model
-[ALIGN](https://arxiv.org/pdf/2102.05918) is another model for zero-shot classification proposed by Google. While the original ALIGN model is not publicly available, Kakao Brain has provided an open-sourced pre-trained ALIGN model that offers performance similar to Google's ALIGN model. By using pre-trained ALIGN model 
+[ALIGN](https://arxiv.org/pdf/2102.05918) is another model for zero-shot classification proposed by Google. While the original ALIGN model is not publicly available, Kakao Brain has provided an open-sourced pre-trained ALIGN model that offers performance similar to Google's ALIGN model. The ALIGN model's performance on the test dataset is 61.530%, which is bad compared to various CLIP models.
 
+Here's the script for ALIGN model.
 ```
 python3 ALIGN.py
 ```
 
 ### 3-1. Various pretrained CLIP models
-According to OpenClip library, there are over 100 pretrained CLIP models 
+According to OpenClip library, there are over 100 pre-trained CLIP models [(See here)](https://github.com/mlfoundations/open_clip/blob/main/docs/openclip_results.csv). The table below shows the performance of different CLIP models with two different prompts: "{class}" and "a photo of {class}". The results showed that the "ViT-bigG-14-CLIPA" model, pre-trained with the "Datacomp1b" dataset and using the prompt "{class}", achieved the highest score on the test dataset. The results also indicated that the effectiveness of prompts is model-dependent.
+
+|Top-1 Acc.|# Params. (M)|CLIP Model|Pretrained|Prompt tuning|
+|---|---|---|---|---|
+|0.67382|351.77|convnext_large_d_320|laion2b_s29b_b131k_ft|“{class}”|
+|0.75604|351.77|convnext_large_d_320|laion2b_s29b_b131k_ft|“a photo of {class}”|
+|0.73358|351.77|convnext_large_d_320|laion2b_s29b_b131k_ft_soup|“{class}”|
+|0.79160|351.77|convnext_large_d_320|laion2b_s29b_b131k_ft_soup|“a photo of {class}”|
+|0.72592|149.62|ViT-B-16|openai|“{class}”|
+|0.67333|149.62|ViT-B-16|openai|“a photo of {class}”|
+|0.80814|149.62|ViT-B-16|Dfn2b|“{class}”|
+|0.81654|149.62|ViT-B-16|Dfn2b|“a photo of {class}”|
+|0.84740|427.62|ViT-L-14|datacomp_xl_s13b_b90k|“{class}”|
+|0.82074|427.62|ViT-L-14|datacomp_xl_s13b_b90k|“a photo of {class}”|
+|0.84691|427.62|ViT-L-14|commonpool_xl_clip_s13b_b90k|“{class}”|
+|0.84740|427.62|ViT-L-14|commonpool_xl_clip_s13b_b90k|“a photo of {class}”|
+|0.83234|427.62|ViT-L-14|commonpool_xl_laion_s13b_b90k|“{class}”|
+|0.84765|427.62|ViT-L-14|commonpool_xl_laion_s13b_b90k|“a photo of {class}”|
+|0.86987|427.62|ViT-L-14-quickgelu|metaclip_fullcc|“{class}”|
+|0.85012|427.62|ViT-L-14-quickgelu|metaclip_fullcc|“a photo of {class}”|
+|0.86098|427.62|ViT-L-14-quickgelu|Dfn2b|“{class}”|
+|0.86419|427.62|ViT-L-14-quickgelu|Dfn2b|“a photo of {class}”|
+|0.84987|986.11|ViT-H-14-quickgelu|Dfn5b|“{class}”|
+|0.86814|986.11|ViT-H-14-quickgelu|Dfn5b|“a photo of {class}”|
+|0.86913|986.11|ViT-H-14-quickgelu|metaclip_fullcc|“{class}”|
+|0.86074|986.11|ViT-H-14-quickgelu|metaclip_fullcc|“a photo of {class}”|
+|0.84197|986.71|ViT-H-14-378-quickgelu|Dfn5b|“{class}”|
+|0.85975|986.71|ViT-H-14-378-quickgelu|Dfn5b|“a photo of {class}”|
+|0.85259|968.64|ViT-H-14-CLIPA-336|Datacomp1b|“{class}”|
+|0.87703|968.64|ViT-H-14-CLIPA-336|Datacomp1b|“a photo of {class}”|
+|0.78246|877.36|ViT-SO400M-14-SigLIP-384|Webli|“{class}”|
+|0.77728|877.36|ViT-SO400M-14-SigLIP-384|Webli|“a photo of {class}”|
+|0.79506|2539.57|ViT-bigG-14|laion2b_s39b_b160k|“{class}”|
+|0.78932|2539.57|ViT-bigG-14|laion2b_s39b_b160k|“a photo of {class}”|
+|**0.88617**|**2517.22**|**ViT-bigG-14-CLIPA**|**Datacomp1b**|**“{class}”**|
+|0.87259|2517.22|ViT-bigG-14-CLIPA|Datacomp1b|“a photo of {class}”|
+|0.88172|2517.76|ViT-bigG-14-CLIPA-336|Datacomp1b|“{class}”|
+|0.87061|2517.76|ViT-bigG-14-CLIPA-336|Datacomp1b|“a photo of {class}”|
+
+Here are the other experimental results. The first two rows show the results of weighted averaging the final layers from two different image encoders. (This is inspired by WiSE-FT paper.) Unsurprisingly, the results demonstrated that weighted averaging two different linear layers had nearly the same effect as averaging the output performance of two models. The third and fourth rows present the results of ensembling all prompts provided [here](https://github.com/openai/CLIP/blob/main/notebooks/Prompt_Engineering_for_ImageNet.ipynb), which outperformed using only a single prompt. So in section 3.2, I attempted to add some useful manual prompts through trial and error.
+
+|Top-1 Acc.|# Params. (M)|CLIP Model|Pretrained|Prompt tuning|
+|---|---|---|---|---|
+|0.81481|149.62|ViT-B-16|0.9*dfn2b + 0.1*openai|“{class}”|
+|0.86839|427.62|ViT-L-14-quickgelu|0.95*metaclip_fullcc + 0.05*Dfn2b|“{class}”|
+|0.89827|2517.22|ViT-bigG-14-CLIPA|Datacomp1b|Prompt ensemble|
+|0.86938|2517.22|ViT-bigG-14-CLIPA-quickgelu|Datacomp1b|Prompt ensemble|
+
+Here's the script for all given CLIP models.
 ```
 python3 all_models.py
 ```
@@ -69,6 +118,8 @@ python3 all_models.py
 python3 manual_prompt_tuning.py
 ```
 
-### 3-3. Linear probing with ImageNet (or blurred ImageNet) and SUN397 (or blurred SUN397)
+### 3-3. Linear probing with ImageNet and SUN397
 
-### 3-4. Ensemble ALL
+### 3-4. Linear probing with "blurred" ImageNet and "blurred" SUN397
+
+### 3-5. Ensemble ALL
