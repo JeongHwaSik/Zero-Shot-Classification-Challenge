@@ -1,0 +1,23 @@
+defaults:
+  - _self_
+  - adapter: linear_adapter
+#  - optimizer: adamw
+
+linear_probing: False # if True -> configure adapter
+ft_dataset: ImageNet # SUN397 or ImageNet
+k_shot: full
+epochs: 8
+lr: 4e-4
+batch_size: 256
+alpha: 0.2 # how much previous knowledge will NOT be fed into new adapter
+blurred: False
+save_arch: False
+
+model_name: ViT-bigG-14-CLIPA
+pretrained: datacomp1b
+root: './'
+save_data_dir: data
+device: 'cuda:0'
+
+test_dataset: Scene
+
