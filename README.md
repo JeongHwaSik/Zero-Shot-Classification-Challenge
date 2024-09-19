@@ -227,7 +227,7 @@ python3 main.py model_name=ViT-bigG-14-CLIPA pretrained=datacomp1b linear_probin
 </br>
 
 ### 3-5. Ensemble ALL
-For my final submission, **I ensembled all the models from section 3-1 to 3-4 using a majority vote method** and achieved a public score of 90.760%❗️❗️❗️
+For my final submission, **I ensembled all the models from section 3-1 to 3-4 using a majority vote method** and achieved a public score of **90.760**❗️❗️❗️
 
 Here's the scripts for ensembling all models.
 ```
