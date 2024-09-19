@@ -58,6 +58,7 @@ Here's the script for ALIGN model.
 ```
 python3 ALIGN.py
 ```
+</br>
 
 ### 3-1. Various pretrained CLIP models
 According to OpenClip library, there are over 100 pre-trained CLIP models [(See here)](https://github.com/mlfoundations/open_clip/blob/main/docs/openclip_results.csv). The table below shows the performance of different CLIP models with two different prompts: "{class}" and "a photo of {class}". The results showed that the "ViT-bigG-14-CLIPA" model, pre-trained with the "Datacomp1b" dataset and using the prompt "{class}", achieved the highest score on the test dataset. The results also indicated that the effectiveness of prompts is model-dependent.
@@ -112,6 +113,7 @@ Here's the script for all given CLIP models.
 ```
 python3 all_models.py
 ```
+</br>
 
 ### 3-2. Manual prompt tuning
 
@@ -149,6 +151,7 @@ Here's the script for manually tuning prompts.
 ```
 python3 manual_prompt_tuning.py
 ```
+</br>
 
 ### 3-3. Linear probing with ImageNet and SUN397
 The CLIP model is pre-trained on a vast dataset from the Internet, which helps enhance its generalizability. However, this large-scale training data can also introduce some noise into the model. To address this issue, I attempted to train additional adapters using the ImageNet and SUN397 datasets. (In this experiment, I use CLIP-Adapter.) Contrary to what I expected, the results were lower than those of the original CLIP model and I discovered that there is something unique about the test dataset.
@@ -201,6 +204,7 @@ python3 main.py model_name=ViT-bigG-14-CLIPA pretrained=datacomp1b linear_probin
 ```
 python3 main.py model_name=ViT-bigG-14-CLIPA pretrained=datacomp1b linear_probing=True adapter=clip_adapter ft_dataset=SUN397 k_shot=full 
 ```
+</br>
 
 ### 3-4. Linear probing with "blurred" ImageNet and "blurred" SUN397
 
@@ -219,3 +223,8 @@ In section 3-3, I discovered that the test dataset images are quite blurry. This
 
 ### 3-5. Ensemble ALL
 For my final submission, **I ensembled all the models from section 3-1 to 3-4 using a majority vote method** and achieved a public score of 90.760%❗️❗️❗️
+
+Here's the scripts for ensembling all models.
+```
+python3 ensemble.py 
+```
