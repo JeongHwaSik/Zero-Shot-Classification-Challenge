@@ -219,6 +219,11 @@ In section 3-3, I discovered that the test dataset images are quite blurry. This
 |0.86049|ViT-bigG-14-CLIPA|Blurred SUN397|Full|16|“{class}”|
 |🌟|ViT-bigG-14-CLIPA|Blurred ImageNet|Full|16|“{class}”|
 
+Here's the script for linear probing with "blurry" SUN397 dataset.
+```
+python3 main.py model_name=ViT-bigG-14-CLIPA pretrained=datacomp1b linear_probing=True adapter=clip_adapter ft_dataset=SUN397 blurred=True k_shot=full 
+```
+
 </br>
 
 ### 3-5. Ensemble ALL
