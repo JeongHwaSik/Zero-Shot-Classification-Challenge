@@ -1,6 +1,6 @@
 # Zero-shot Classification Challenge
 
-#### 🎉🎉 Achieved 5th place with a private score of 90.617 and a public score of 90.760 🎉🎉
+#### 🎉🎉 Achieved 5th place with a private score of 90.617% and a public score of 90.760% 🎉🎉
 </br>
 
 <img width="1046" alt="Screenshot 2024-09-18 at 8 39 24 PM" src="https://github.com/user-attachments/assets/4a62068b-73af-4a7f-8c02-73d422da3041">
@@ -215,5 +215,7 @@ In section 3-3, I discovered that the test dataset images are quite blurry. This
 |0.86049|ViT-bigG-14-CLIPA|Blurred SUN397|Full|16|“{class}”|
 |🌟|ViT-bigG-14-CLIPA|Blurred ImageNet|Full|16|“{class}”|
 
+</br>
 
 ### 3-5. Ensemble ALL
+For my final submission, **I ensembled all the models from section 3-1 to 3-4 using a majority vote method** and achieved a public score of 90.760!!!
