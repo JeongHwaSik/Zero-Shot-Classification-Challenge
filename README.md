@@ -218,4 +218,4 @@ In section 3-3, I discovered that the test dataset images are quite blurry. This
 </br>
 
 ### 3-5. Ensemble ALL
-For my final submission, **I ensembled all the models from section 3-1 to 3-4 using a majority vote method** and achieved a public score of 90.760!!!
+For my final submission, **I ensembled all the models from section 3-1 to 3-4 using a majority vote method** and achieved a public score of 90.760%❗️❗️❗️
