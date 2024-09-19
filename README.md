@@ -105,7 +105,7 @@ Here are the other experimental results. The first two rows show the results of 
 |---|---|---|---|---|
 |0.81481|149.62|ViT-B-16|0.9*dfn2b + 0.1*openai|“{class}”|
 |0.86839|427.62|ViT-L-14-quickgelu|0.95*metaclip_fullcc + 0.05*Dfn2b|“{class}”|
-|0.89827|2517.22|ViT-bigG-14-CLIPA|Datacomp1b|Prompt ensemble|
+|**0.89827**|**2517.22**|**ViT-bigG-14-CLIPA**|**Datacomp1b**|**Prompt ensemble**|
 |0.86938|2517.22|ViT-bigG-14-CLIPA-quickgelu|Datacomp1b|Prompt ensemble|
 
 Here's the script for all given CLIP models.
@@ -203,5 +203,6 @@ python3 main.py model_name=ViT-bigG-14-CLIPA pretrained=datacomp1b linear_probin
 ```
 
 ### 3-4. Linear probing with "blurred" ImageNet and "blurred" SUN397
+If
 
 ### 3-5. Ensemble ALL
