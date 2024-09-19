@@ -151,7 +151,7 @@ python3 manual_prompt_tuning.py
 ```
 
 ### 3-3. Linear probing with ImageNet and SUN397
-The CLIP model is pre-trained on a vast dataset from the Internet, which helps enhance its generalizability. However, this large-scale training data can also introduce some noise into the model. To address this issue, I attempted to train additional adapters using the ImageNet and SUN397 datasets to help mitigate the noise.
+The CLIP model is pre-trained on a vast dataset from the Internet, which helps enhance its generalizability. However, this large-scale training data can also introduce some noise into the model. To address this issue, I attempted to train additional adapters using the ImageNet and SUN397 datasets. (In this experiment, I use CLIP-Adapter.) Contrary to what I expected, the results were lower than those of the original CLIP model and I discovered that there is something unique about the test dataset.
 
 |Top-1 Acc.|Models|Dataset|k-shot|Epochs|prompt|
 |---|---|---|---|---|---|
@@ -164,7 +164,43 @@ The CLIP model is pre-trained on a vast dataset from the Internet, which helps e
 |0.84987|ViT-bigG-14-CLIPA|SUN397|16-shot|200|"a photo of a {class}."|
 |0.84197|ViT-bigG-14-CLIPA|SUN397|32-shot|200|"a photo of a {class}."|
 
-
+Here's the scripts for linear probing adapters.
+```
+python3 main.py model_name=ViT-bigG-14-CLIPA pretrained=datacomp1b linear_probing=True adapter=linear_adapter ft_dataset=ImageNet k_shot=16 
+```
+```
+python3 main.py model_name=ViT-bigG-14-CLIPA pretrained=datacomp1b linear_probing=True adapter=linear_adapter ft_dataset=ImageNet k_shot=32
+```
+```
+python3 main.py model_name=ViT-bigG-14-CLIPA pretrained=datacomp1b linear_probing=True adapter=linear_adapter ft_dataset=ImageNet k_shot=full 
+```
+```
+python3 main.py model_name=ViT-bigG-14-CLIPA pretrained=datacomp1b linear_probing=True adapter=linear_adapter ft_dataset=SUN397 k_shot=16 
+```
+```
+python3 main.py model_name=ViT-bigG-14-CLIPA pretrained=datacomp1b linear_probing=True adapter=linear_adapter ft_dataset=SUN397 k_shot=32
+```
+```
+python3 main.py model_name=ViT-bigG-14-CLIPA pretrained=datacomp1b linear_probing=True adapter=linear_adapter ft_dataset=SUN397 k_shot=full 
+```
+```
+python3 main.py model_name=ViT-bigG-14-CLIPA pretrained=datacomp1b linear_probing=True adapter=clip_adapter ft_dataset=ImageNet k_shot=16 
+```
+```
+python3 main.py model_name=ViT-bigG-14-CLIPA pretrained=datacomp1b linear_probing=True adapter=clip_adapter ft_dataset=ImageNet k_shot=32
+```
+```
+python3 main.py model_name=ViT-bigG-14-CLIPA pretrained=datacomp1b linear_probing=True adapter=clip_adapter ft_dataset=ImageNet k_shot=full 
+```
+```
+python3 main.py model_name=ViT-bigG-14-CLIPA pretrained=datacomp1b linear_probing=True adapter=clip_adapter ft_dataset=SUN397 k_shot=16 
+```
+```
+python3 main.py model_name=ViT-bigG-14-CLIPA pretrained=datacomp1b linear_probing=True adapter=clip_adapter ft_dataset=SUN397 k_shot=32
+```
+```
+python3 main.py model_name=ViT-bigG-14-CLIPA pretrained=datacomp1b linear_probing=True adapter=clip_adapter ft_dataset=SUN397 k_shot=full 
+```
 
 ### 3-4. Linear probing with "blurred" ImageNet and "blurred" SUN397
 
