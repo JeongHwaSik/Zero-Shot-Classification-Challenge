@@ -203,6 +203,17 @@ python3 main.py model_name=ViT-bigG-14-CLIPA pretrained=datacomp1b linear_probin
 ```
 
 ### 3-4. Linear probing with "blurred" ImageNet and "blurred" SUN397
-If
+
+|ImageNet Image with shape (3, 224, 224)|Challenge Image with shape (3, 224, 224)|
+|---|---|
+|<img src="https://github.com/user-attachments/assets/39c9f1e7-83fd-4cea-9e31-be2f2ad482cb" width="400" height="400"/>|<img src="https://github.com/user-attachments/assets/0fa75233-c893-4580-be9a-8549bc052dbc" width="400" height="400"/>|
+
+In section 3-3, I discovered that the test dataset images are quite blurry. This led me to consider using a "blurry" version of the ImageNet or SUN397 datasets to improve the model's performance on the test dataset. However, processing Gaussian blur for all images in the dataset proved to be a significant bottleneck, taking nearly a week for linear probing with the blurry ImageNet dataset. Due to the time constraints of this challenge, I decided to test only on the "blurry" SUN397 dataset, which yielded better results than those from section 3-3. When combining the results from section 3-3 and 3-4, I estimate that linear probing with a "blurry" ImageNet would have achieved results above 90%(🌟). 
+
+|Top-1 Acc.|Models|Pretrained|prompt|
+|---|---|---|---|
+|0.86049|ViT-bigG-14-CLIPA|Blurred SUN397|Full|16|“{class}”|
+|🌟|ViT-bigG-14-CLIPA|Blurred ImageNet|Full|16|“{class}”|
+
 
 ### 3-5. Ensemble ALL
