@@ -123,28 +123,27 @@ From section 3-1, I learned that ensembling some useful prompts can enhance the 
 |---|---|---|---|
 |0.88617|ViT-bigG-14-CLIPA|Datacomp1b|[{}]|
 |0.89086|ViT-bigG-14-CLIPA|Datacomp1b|['itap of a {}.', 'a bad photo of the {}.', 'a origami {}.', 'a photo of the large {}.', 'a {} in a video game.', 'art of the {}.', 'a photo of the small {}.']|
-|0.89037|ViT-bigG-14-CLIPA|Datacomp1b|['itap of a {}.', 'a bad photo of the {}.', 'a origami {}.', 'a photo of the large {}.', 'a {} in a video game.', 'art of the {}.', 'a photo of the small {}.']|
-|0.89135|ViT-bigG-14-CLIPA|Datacomp1b|['itap of a {}.', 'a bad photo of the {}.', 'a origami {}.', 'a photo of the large {}.', 'a {} in a video game.', 'art of the {}.', 'a photo of the small {}.']|
-|0.88913|ViT-bigG-14-CLIPA|Datacomp1b|['itap of a {}.', 'a bad photo of the {}.', 'a origami {}.', 'a photo of the large {}.', 'a {} in a video game.', 'art of the {}.', 'a photo of the small {}.']|
-|0.88913|ViT-bigG-14-CLIPA|Datacomp1b|['itap of a {}.', 'a bad photo of the {}.', 'a origami {}.', 'a photo of the large {}.', 'a {} in a video game.', 'art of the {}.', 'a photo of the small {}.']|
-|0.88938|ViT-bigG-14-CLIPA|Datacomp1b|['itap of a {}.', 'a bad photo of the {}.', 'a origami {}.', 'a photo of the large {}.', 'a {} in a video game.', 'art of the {}.', 'a photo of the small {}.']|
-|0.89061|ViT-bigG-14-CLIPA|Datacomp1b|['itap of a {}.', 'a bad photo of the {}.', 'a origami {}.', 'a photo of the large {}.', 'a {} in a video game.', 'art of the {}.', 'a photo of the small {}.']|
-|0.89358|ViT-bigG-14-CLIPA|Datacomp1b|['itap of a {}.', 'a bad photo of the {}.', 'a origami {}.', 'a photo of the large {}.', 'a {} in a video game.', 'art of the {}.', 'a photo of the small {}.']|
-|0.89160|ViT-bigG-14-CLIPA|Datacomp1b|['a bad photo of the {}.', 'a origami {}.', 'a photo of the large {}.', 'a {} in a video game.', 'art of the {}.', 'a blurry photo of the {}.']|
-|0.89432|ViT-bigG-14-CLIPA|Datacomp1b|['a bad photo of the {}.', 'a origami {}.', 'a photo of the large {}.', 'a {} in a video game.', 'art of the {}.', 'a view of the {}.']|
-|0.89111|ViT-bigG-14-CLIPA|Datacomp1b|['a bad photo of the {}.', 'a origami {}.', 'a photo of the large {}.', 'a {} in a video game.', 'art of the {}.', 'a view of the {}.', 'a cropped photo of the {}.']|
-|0.89506|ViT-bigG-14-CLIPA|Datacomp1b|['{}', 'a bad photo of the {}.', 'a origami {}.', 'a photo of the large {}.', 'a {} in a video game.', 'art of the {}.', 'a view of the {}.']|
-|0.89382|ViT-bigG-14-CLIPA|Datacomp1b|['{}', 'a bad photo of the {}.', 'a origami {}.', 'a photo of the large {}.', 'a {} in a video game.', 'art of the {}.', 'a view of the {}.', 'the embroidered {}.']|
-|0.89432|ViT-bigG-14-CLIPA|Datacomp1b|['{}', 'a bad photo of the {}.', 'a origami {}.', 'a photo of the large {}.', 'a {} in a video game.', 'art of the {}.', 'a view of the {}.', 'a dark photo of the {}.']|
-|0.89234|ViT-bigG-14-CLIPA|Datacomp1b|['{}', 'a bad photo of the {}.', 'a origami {}.', 'a photo of the large {}.', 'a {} in a video game.', 'art of the {}.', 'a view of the {}.', 'a low resolution photo of the {}.']|
-|**0.89506**|**ViT-bigG-14-CLIPA**|**Datacomp1b**|**['{}', 'a bad photo of the {}.', 'a origami {}.', 'a photo of the large {}.', 'a {} in a video game.', 'art of the {}.', 'a view of the {}.', 'a photo of many {}.']**|
-|0.89209|ViT-bigG-14-CLIPA|Datacomp1b|['{}', 'a bad photo of the {}.', 'a origami {}.', 'a photo of the large {}.', 'a {} in a video game.', 'art of the {}.', 'a view of the {}.', 'a photo of many {}.', 'a photo of the hard to see {}.']|
-|0.89456|ViT-bigG-14-CLIPA|Datacomp1b|['{}', 'a bad photo of the {}.', 'a origami {}.', 'a photo of the large {}.', 'a {} in a video game.', 'art of the {}.', 'a view of the {}.', 'a photo of many {}.', 'graffiti of a {}.']|
-|0.89234|ViT-bigG-14-CLIPA|Datacomp1b|['{}', 'a bad photo of the {}.', 'a origami {}.', 'a photo of the large {}.', 'a {} in a video game.', 'art of the {}.', 'a view of the {}.', 'a photo of many {}.', 'the embroidered {}.']|
-|0.89308|ViT-bigG-14-CLIPA|Datacomp1b|['{}', 'a bad photo of the {}.', 'a origami {}.', 'a photo of the large {}.', 'a {} in a video game.', 'art of the {}.', 'a view of the {}.', 'a photo of many {}.', 'a rendering of a {}.']|
-|0.89382|ViT-bigG-14-CLIPA|Datacomp1b|['{}', 'a bad photo of the {}.', 'a origami {}.', 'a photo of the large {}.', 'a {} in a video game.', 'art of the {}.', 'a view of the {}.', 'a photo of many {}.', 'a tattoo of a {}.']|
-|0.89333|ViT-bigG-14-CLIPA|Datacomp1b|['{}', 'a bad photo of the {}.', 'a origami {}.', 'a photo of the large {}.', 'a {} in a video game.', 'art of the {}.', 'a view of the {}.', 'a photo of many {}.', 'a scene of the {}.']|
-|0.89259|ViT-bigG-14-CLIPA|Datacomp1b|['{}', 'a bad photo of the {}.', 'a origami {}.', 'a photo of the large {}.', 'a {} in a video game.', 'art of the {}.', 'a view of the {}.', 'a photo of many {}.', 'a photo of a {}, a type of scene.']|
+|0.89037|ViT-bigG-14-CLIPA|Datacomp1b|['itap of a {}.', 'a bad photo of the {}.', 'a origami {}.', 'a photo of the large {}.', ~~'a {} in a video game.'~~, 'art of the {}.', 'a photo of the small {}.']|
+|0.89135|ViT-bigG-14-CLIPA|Datacomp1b|[~~'itap of a {}.'~~, 'a bad photo of the {}.', 'a origami {}.', 'a photo of the large {}.', 'a {} in a video game.', 'art of the {}.', 'a photo of the small {}.']|
+|0.88913|ViT-bigG-14-CLIPA|Datacomp1b|[~~'itap of a {}.'~~, 'a bad photo of the {}.', ~~'a origami {}.'~~, 'a photo of the large {}.', 'a {} in a video game.', 'art of the {}.', 'a photo of the small {}.']|
+|0.88913|ViT-bigG-14-CLIPA|Datacomp1b|[~~'itap of a {}.'~~, ~~'a bad photo of the {}.'~~, 'a origami {}.', 'a photo of the large {}.', 'a {} in a video game.', 'art of the {}.', 'a photo of the small {}.']|
+|0.88938|ViT-bigG-14-CLIPA|Datacomp1b|[~~'itap of a {}.'~~, 'a bad photo of the {}.', 'a origami {}.', 'a photo of the large {}.', 'a {} in a video game.', ~~'art of the {}.'~~, 'a photo of the small {}.']|
+|0.89061|ViT-bigG-14-CLIPA|Datacomp1b|[~~'itap of a {}.'~~, 'a bad photo of the {}.', 'a origami {}.', ~~'a photo of the large {}.'~~, 'a {} in a video game.', 'art of the {}.', 'a photo of the small {}.']|
+|0.89358|ViT-bigG-14-CLIPA|Datacomp1b|[~~'itap of a {}.'~~, 'a bad photo of the {}.', 'a origami {}.', 'a photo of the large {}.', 'a {} in a video game.', 'art of the {}.', ~~'a photo of the small {}.'~~]|
+|0.89160|ViT-bigG-14-CLIPA|Datacomp1b|['a bad photo of the {}.', 'a origami {}.', 'a photo of the large {}.', 'a {} in a video game.', 'art of the {}.', <ins>'a blurry photo of the {}.'</ins>]|
+|0.89432|ViT-bigG-14-CLIPA|Datacomp1b|['a bad photo of the {}.', 'a origami {}.', 'a photo of the large {}.', 'a {} in a video game.', 'art of the {}.', <ins>'a view of the {}.'</ins>]|
+|0.89111|ViT-bigG-14-CLIPA|Datacomp1b|['a bad photo of the {}.', 'a origami {}.', 'a photo of the large {}.', 'a {} in a video game.', 'art of the {}.', 'a view of the {}.', <ins>'a cropped photo of the {}.'</ins>]|
+|0.89506|ViT-bigG-14-CLIPA|Datacomp1b|[<ins>'{}'</ins>, 'a bad photo of the {}.', 'a origami {}.', 'a photo of the large {}.', 'a {} in a video game.', 'art of the {}.', 'a view of the {}.']|
+|0.89382|ViT-bigG-14-CLIPA|Datacomp1b|['{}', 'a bad photo of the {}.', 'a origami {}.', 'a photo of the large {}.', 'a {} in a video game.', 'art of the {}.', 'a view of the {}.', <ins>'the embroidered {}.'</ins>]|
+|0.89432|ViT-bigG-14-CLIPA|Datacomp1b|['{}', 'a bad photo of the {}.', 'a origami {}.', 'a photo of the large {}.', 'a {} in a video game.', 'art of the {}.', 'a view of the {}.', <ins>'a dark photo of the {}.'</ins>]|
+|0.89234|ViT-bigG-14-CLIPA|Datacomp1b|['{}', 'a bad photo of the {}.', 'a origami {}.', 'a photo of the large {}.', 'a {} in a video game.', 'art of the {}.', 'a view of the {}.', <ins>'a low resolution photo of the {}.'</ins>]|
+|**0.89506**|**ViT-bigG-14-CLIPA**|**Datacomp1b**|**['{}', 'a bad photo of the {}.', 'a origami {}.', 'a photo of the large {}.', 'a {} in a video game.', 'art of the {}.', 'a view of the {}.', <ins>'a photo of many {}.'</ins>]**|
+|0.89209|ViT-bigG-14-CLIPA|Datacomp1b|['{}', 'a bad photo of the {}.', 'a origami {}.', 'a photo of the large {}.', 'a {} in a video game.', 'art of the {}.', 'a view of the {}.', 'a photo of many {}.', <ins>'a photo of the hard to see {}.'</ins>]|
+|0.89456|ViT-bigG-14-CLIPA|Datacomp1b|['{}', 'a bad photo of the {}.', 'a origami {}.', 'a photo of the large {}.', 'a {} in a video game.', 'art of the {}.', 'a view of the {}.', 'a photo of many {}.', <ins>'graffiti of a {}.'</ins>]|
+|0.89308|ViT-bigG-14-CLIPA|Datacomp1b|['{}', 'a bad photo of the {}.', 'a origami {}.', 'a photo of the large {}.', 'a {} in a video game.', 'art of the {}.', 'a view of the {}.', 'a photo of many {}.', <ins>'a rendering of a {}.'</ins>]|
+|0.89382|ViT-bigG-14-CLIPA|Datacomp1b|['{}', 'a bad photo of the {}.', 'a origami {}.', 'a photo of the large {}.', 'a {} in a video game.', 'art of the {}.', 'a view of the {}.', 'a photo of many {}.', <ins>'a tattoo of a {}.'</ins>]|
+|0.89333|ViT-bigG-14-CLIPA|Datacomp1b|['{}', 'a bad photo of the {}.', 'a origami {}.', 'a photo of the large {}.', 'a {} in a video game.', 'art of the {}.', 'a view of the {}.', 'a photo of many {}.', <ins>'a scene of the {}.'</ins>]|
+|0.89259|ViT-bigG-14-CLIPA|Datacomp1b|['{}', 'a bad photo of the {}.', 'a origami {}.', 'a photo of the large {}.', 'a {} in a video game.', 'art of the {}.', 'a view of the {}.', 'a photo of many {}.', <ins>'a photo of a {}, a type of scene.'</ins>]|
 
 
 Here's the script for manually tuning prompts.
