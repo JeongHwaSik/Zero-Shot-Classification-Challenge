@@ -11,7 +11,7 @@
 ## 1. Challenge Overview
 The purpose of this challenge is to predict the labels of a given test image dataset using a Vision Language Model (VLM). **In this case, the VLM model must not be trained on the provided test data.** The goal of this challenge is to enhance the performance of the model in recognizing image datasets it has never seen before (zero-shot classification) using the VLM model.
 
-- Data Composition: The challenge dataset is for zero-shot classification and consists of 8,100 images and 6 classes. I uploaded some images in the Scene folder.
+- Data Composition: The challenge dataset is for zero-shot classification and consists of 8,100 images and 6 classes. I have uploaded several images to the Scene folder.
 <div align="center">
 
 |Category|Statistics|
