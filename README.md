@@ -61,7 +61,7 @@ python3 ALIGN.py
 </br>
 
 ### 3-1. Various pretrained CLIP models
-According to [OpenClip](https://github.com/mlfoundations/open_clip) library, there are over 100 pre-trained CLIP models [(See here)](https://github.com/mlfoundations/open_clip/blob/main/docs/openclip_results.csv). The table below shows the performance of different CLIP models with two different prompts: `{class}` and `a photo of {class}`. The results showed that the `ViT-bigG-14-CLIPA` model, pre-trained with the `Datacomp1b` dataset and using the prompt "{class}", achieved the highest score on the test dataset. The results also indicated that the effectiveness of prompts is model-dependent.
+According to [OpenClip](https://github.com/mlfoundations/open_clip) library, there are over 100 pre-trained CLIP models [(See here)](https://github.com/mlfoundations/open_clip/blob/main/docs/openclip_results.csv). The table below shows the performance of different CLIP models with two different prompts: `{class}` and `a photo of {class}`. The results showed that the `ViT-bigG-14-CLIPA` model, pre-trained with the `Datacomp1b` dataset and using the prompt `{class}`, achieved the highest score on the test dataset. The results also indicated that the effectiveness of prompts is model-dependent.
 
 |Top-1 Acc.|# Params. (M)|CLIP Model|Pretrained|Prompt tuning|
 |---|---|---|---|---|
@@ -100,7 +100,7 @@ According to [OpenClip](https://github.com/mlfoundations/open_clip) library, the
 |0.88172|2517.76|ViT-bigG-14-CLIPA-336|Datacomp1b|“{class}”|
 |0.87061|2517.76|ViT-bigG-14-CLIPA-336|Datacomp1b|“a photo of {class}”|
 
-Here are the other experimental results. The first two rows show the results of weighted averaging the final layers from two different image encoders. (This is inspired by WiSE-FT paper.) Unsurprisingly, the results demonstrated that weighted averaging two different linear layers had nearly the same effect as averaging the output performance of two models. The third and fourth rows present the results of ensembling all prompts provided [here](https://github.com/openai/CLIP/blob/main/notebooks/Prompt_Engineering_for_ImageNet.ipynb), which outperformed using only a single prompt. So in section 3.2, I attempted to add some useful manual prompts through trial and error.
+Here is the other experimental results below. The first two rows show the results of weighted averaging the final layers from two different image encoders. (This is inspired by WiSE-FT paper.) Unsurprisingly, the results demonstrated that weighted averaging two different linear layers had nearly the same effect as averaging the output performance of two models. The third and fourth rows present the results of ensembling all prompts provided [here](https://github.com/openai/CLIP/blob/main/notebooks/Prompt_Engineering_for_ImageNet.ipynb), which outperformed using only a single prompt. So as a next step, I attempted to add some useful manual prompts through trial and error. (See section 3-2)
 
 |Top-1 Acc.|# Params. (M)|CLIP Model|Pretrained|Prompt tuning|
 |---|---|---|---|---|
@@ -117,7 +117,7 @@ python3 all_models.py
 
 ### 3-2. Manual prompt tuning
 
-From section 3-1, I learned that ensembling some useful prompts can enhance the performance of the CLIP model. Therefore, I selected the "ViT-bigG-14-CLIPA" model, pre-trained with the "Datacomp1b" dataset, and manually experimented with various prompts. Through trial and error, I found that while ensembling prompts does improve performance, the effectiveness is really slight.
+From section 3-1, I learned that ensembling some useful prompts can enhance the performance of the CLIP model. Therefore, I selected the `ViT-bigG-14-CLIPA` model, pre-trained with the `Datacomp1b` dataset, and manually experimented with various prompts. Through trial and error, I found that while ensembling prompts does improve performance, the effectiveness is really slight.
 
 |Top-1 Acc.|Models|Pretrained|prompt|
 |---|---|---|---|
