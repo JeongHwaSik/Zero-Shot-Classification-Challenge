@@ -61,7 +61,7 @@ python3 ALIGN.py
 </br>
 
 ### 3-1. Various pretrained CLIP models
-According to OpenClip library, there are over 100 pre-trained CLIP models [(See here)](https://github.com/mlfoundations/open_clip/blob/main/docs/openclip_results.csv). The table below shows the performance of different CLIP models with two different prompts: "{class}" and "a photo of {class}". The results showed that the "ViT-bigG-14-CLIPA" model, pre-trained with the "Datacomp1b" dataset and using the prompt "{class}", achieved the highest score on the test dataset. The results also indicated that the effectiveness of prompts is model-dependent.
+According to [OpenClip](https://github.com/mlfoundations/open_clip) library, there are over 100 pre-trained CLIP models [(See here)](https://github.com/mlfoundations/open_clip/blob/main/docs/openclip_results.csv). The table below shows the performance of different CLIP models with two different prompts: "{class}" and "a photo of {class}". The results showed that the `ViT-bigG-14-CLIPA` model, pre-trained with the `Datacomp1b` dataset and using the prompt "{class}", achieved the highest score on the test dataset. The results also indicated that the effectiveness of prompts is model-dependent.
 
 |Top-1 Acc.|# Params. (M)|CLIP Model|Pretrained|Prompt tuning|
 |---|---|---|---|---|
